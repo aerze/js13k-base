@@ -33,7 +33,7 @@ gulp.task('compile:template', async () => {
   const css = await readFile('./build/main.min.css');
   const template = await readFile('./src/index.hbs');
   const result = handlebars.compile(template)({ js, css });
-  await writeFile('./compile/index.html');
+  await writeFile('./compiled/index.html', result);
 });
 
 gulp.task('compile:html', gulp.series(['compile:js', 'compile:css', 'compile:assets', 'compile:template']));

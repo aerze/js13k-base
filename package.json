@@ -4,7 +4,17 @@
   "description": "template for building js13k entries",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:dev": "gulp build:html",
+    "watch:dev": "gulp watch:build",
+    "serve:dev": "serve ./build",
+    "build:final": "gulp compile:html",
+    "watch:final": "gulp watch:compile",
+    "serve:final": "serve ./compiled",
+    "start": "npm run dev",
+    "dev": "concurrently \"npm:build:dev\" \"npm:watch:dev\" \"npm:serve:dev\"",
+    "final": "concurrently \"npm:build:final\" \"npm:watch:final\" \"npm:serve:final\"",
+    "zip": "gulp compile:zip",
+    "package": "gulp compile:zip"
   },
   "repository": {
     "type": "git",
@@ -17,6 +27,7 @@
   },
   "homepage": "https://github.com/aerze/js13k-base#readme",
   "devDependencies": {
+    "concurrently": "^6.2.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat-css": "^3.1.0",
@@ -26,6 +37,7 @@
     "handlebars": "^4.7.7",
     "rollup": "^2.56.0",
     "rollup-plugin-local-resolve": "^1.0.7",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "serve": "^12.0.0"
   }
 }

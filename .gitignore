@@ -59,7 +59,7 @@ typings/
 
 # Build artifacts
 build/
-compile/
+compiled/
 releases/
 
 # VSCode

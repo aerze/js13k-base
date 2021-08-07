@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const rollup = require('rollup');
-const terser = require('rollup-plugin-terser');
+const { terser } = require('rollup-plugin-terser');
 const localResolve = require('rollup-plugin-local-resolve');
 
 gulp.task('build:js', async () => {

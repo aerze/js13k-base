@@ -6,7 +6,7 @@ const name = packageJson.project || 'game';
 
 gulp.task('zip', () =>
   gulp
-    .src('./compile/**/*')
+    .src('./compiled/**/*')
     .pipe(zip(`${name}.zip`))
     .pipe(size())
     .pipe(gulp.dest('./releases'))
